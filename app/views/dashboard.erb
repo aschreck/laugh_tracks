@@ -1,0 +1,15 @@
+<ul>Here are the Comedians
+
+  <% @comedians.each do |comedian| %>
+    <li><h1><%= comedian.name %> </h1></li>
+    <li>Age:<%= comedian.age %> </li>
+      <%= specials = Special.where(comedian_id: comedian.id)%>
+        <p><%= comedian.name%> has <%= specials.count %> specials. They are:</p>
+      <% specials.each do |special| %>
+        <p><%= special.name %></p>
+        <%end%>
+    <%end %>
+
+</ul>
+
+<h2> The Average Age of these Comedians is: <%=Comedian.average(:age).floor%></h2>
