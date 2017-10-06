@@ -7,12 +7,7 @@ class LaughTracksApp < Sinatra::Base
     else 
       @comedians = Comedian.all
     end 
-  @specials = Special.all
+      @specials = Special.all
     erb :dashboard
   end 
-
-  # get "/comedians/:age" do
-  #   @comedians = Comedian.where(params[:age])
-  #   erb :'age-dashboard'
-  # end 
 end
